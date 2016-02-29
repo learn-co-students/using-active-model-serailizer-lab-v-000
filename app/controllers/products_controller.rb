@@ -1,16 +1,10 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-  end
-
-  def inventory
-    product = Product.find(params[:id])
-    render plain: product.inventory > 0 ? true : false
-  end
-
-  def description
-    product = Product.find(params[:id])
-    render plain: product.description
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @products.to_json(only: [:id, :name, :description, :price, :inventory]) }
+    end
   end
 
   def new
