@@ -3616,3 +3616,23 @@ Processing by OrdersController#index as JSON
   [1m[36mOrderedProduct Load (0.1ms)[0m  [1mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 30]]
   [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 27]]
 Completed 200 OK in 52ms (Views: 1.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/products/21.json" for ::1 at 2016-02-29 18:59:02 +0100
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"21"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 21]]
+Completed 200 OK in 11ms (Views: 1.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/21.json" for ::1 at 2016-02-29 18:59:15 +0100
+Processing by ProductsController#show as JSON
+  Parameters: {"id"=>"21"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 21]]
+Completed 200 OK in 9ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products.json" for ::1 at 2016-02-29 18:59:21 +0100
+Processing by ProductsController#index as JSON
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
